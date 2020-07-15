@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_15_040124) do
+ActiveRecord::Schema.define(version: 2020_07_15_041322) do
 
   create_table "candidate_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "specification_item_id", null: false
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_040124) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "user", null: false, comment: "ユーザ名"
+    t.string "name", null: false
     t.string "email", null: false, comment: "email"
     t.string "password_digest", null: false, comment: "パスワード"
     t.datetime "created_at", precision: 6, null: false
