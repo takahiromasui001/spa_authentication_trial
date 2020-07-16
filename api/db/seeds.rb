@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 if Rails.env == "development"
   User.create!(name: 'user1', email: 'user1@example.com', password: '1111', password_confirmation: '1111')
+  User.create!(name: 'user2', email: 'user2@example.com', password: '1111', password_confirmation: '1111')
 end
