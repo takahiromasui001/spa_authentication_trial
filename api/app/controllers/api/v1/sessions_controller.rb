@@ -12,6 +12,10 @@ module Api
           render json: { message: "login failed" }
         end
       end
+
+      def delete
+        session.delete(:user_id)
+      end
     end
   end
 end

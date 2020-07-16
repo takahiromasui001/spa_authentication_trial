@@ -17,10 +17,15 @@ const Hello: React.FC = () => {
     fetchCurrentUser()
   }, [client])
 
+  const logout = async () => {
+    await client.delete('http://127.0.0.1:3000/api/v1/logout')
+  }
+
   return (
     <div>
       <div>名前: {currentUser?.name}</div>
       <div>email: {currentUser?.email}</div>
+      <button onClick={logout}>logout</button>
     </div>
   )
 }
