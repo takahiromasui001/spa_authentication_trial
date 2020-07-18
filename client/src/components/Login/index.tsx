@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
+import { AuthContext } from '../App'
 
 const Login: React.FC = () => {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
+  const { setAuth } = useContext(AuthContext)
+  const history = useHistory()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -17,7 +21,13 @@ const Login: React.FC = () => {
           },
           { withCredentials: true }
         )
-        .catch(() => console.log('error'))
+        .then((response) => {
+          setAuth(response.data)
+          if (response.data.message === 'login succeed') {
+            history.push('/')
+          }
+        })
+        .catch((error) => console.log(error))
     }
 
     login()

@@ -7,7 +7,7 @@ module Api
 
         if user&.authenticate(params[:password])
           session[:user_id] = user.id
-          render json: { message: "login success" }
+          render json: { message: "login succeed" }
         else
           render json: { message: "login failed" }
         end
