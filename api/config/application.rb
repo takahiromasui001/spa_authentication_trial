@@ -33,5 +33,6 @@ module Api
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = false
+    # config.session_store :cache_store, key: "_api_session", same_site: :none, secure: true
   end
 end
